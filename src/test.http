@@ -1,0 +1,113 @@
+### CREATE 1
+POST http://localhost:8080/api/activities
+Content-Type: application/json
+
+{
+  "title": "신입 부원 환영회",
+  "clubName": "한동 러닝 동아리",
+  "category": "친목",
+  "activityDate": "2026-10-10",
+  "location": "한동대학교 운동장",
+  "participants": 15,
+  "description": "신입 부원들과 함께 러닝 및 친목 활동"
+}
+
+
+### CREATE 2
+POST http://localhost:8080/api/activities
+Content-Type: application/json
+
+{
+  "title": "가을 정기 러닝",
+  "clubName": "한동 러닝 동아리",
+  "category": "운동",
+  "activityDate": "2026-10-15",
+  "location": "포항 영일대",
+  "participants": 12,
+  "description": "가을 정기 러닝 활동"
+}
+
+
+### CREATE 3
+POST http://localhost:8080/api/activities
+Content-Type: application/json
+
+{
+  "title": "동아리 MT",
+  "clubName": "한동 러닝 동아리",
+  "category": "친목",
+  "activityDate": "2026-10-20",
+  "location": "경주",
+  "participants": 20,
+  "description": "동아리 회원 간 친목 활동"
+}
+
+
+### CREATE 4
+POST http://localhost:8080/api/activities
+Content-Type: application/json
+
+{
+  "title": "러닝 대회 참가",
+  "clubName": "한동 러닝 동아리",
+  "category": "대회",
+  "activityDate": "2026-10-25",
+  "location": "대구",
+  "participants": 8,
+  "description": "지역 러닝 대회 참가"
+}
+
+
+### CREATE 5
+POST http://localhost:8080/api/activities
+Content-Type: application/json
+
+{
+  "title": "겨울방학 계획 회의",
+  "clubName": "한동 러닝 동아리",
+  "category": "회의",
+  "activityDate": "2026-11-01",
+  "location": "학생회관",
+  "participants": 10,
+  "description": "다음 학기 동아리 활동 계획 논의"
+}
+
+### GET ALL
+GET http://localhost:8080/api/activities
+
+### GET ONE
+GET http://localhost:8080/api/activities/1
+
+### UPDATE
+PUT http://localhost:8080/api/activities/1
+Content-Type: application/json
+
+{
+  "title": "신입 부원 환영회 - 수정",
+  "clubName": "한동 러닝 동아리",
+  "category": "친목",
+  "activityDate": "2026-10-11",
+  "location": "한동대학교 운동장",
+  "participants": 18,
+  "description": "수정된 환영회 활동"
+}
+
+### DELETE
+DELETE http://localhost:8080/api/activities/1
+
+### GET DELETED
+GET http://localhost:8080/api/activities/1
+
+### INVALID INPUT
+POST http://localhost:8080/api/activities
+Content-Type: application/json
+
+{
+  "title": "",
+  "clubName": "한동 러닝 동아리",
+  "category": "친목",
+  "activityDate": "2026-10-10",
+  "location": "한동대학교 운동장",
+  "participants": 0,
+  "description": "잘못된 입력 테스트"
+}
