@@ -9,5 +9,4 @@ public class SpringCrudActivityApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringCrudActivityApplication.class, args);
     }
-
 }

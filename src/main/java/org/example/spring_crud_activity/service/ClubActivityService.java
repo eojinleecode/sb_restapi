@@ -1,5 +1,5 @@
 package org.example.spring_crud_activity.service;
-
+import org.example.spring_crud_activity.exception.ActivityNotFoundException;
 import org.example.spring_crud_activity.domain.ClubActivity;
 import org.example.spring_crud_activity.dto.ClubActivityRequest;
 import org.example.spring_crud_activity.dto.ClubActivityResponse;
@@ -47,7 +47,7 @@ public class ClubActivityService {
 
     public ClubActivityResponse findById(Long id) {
         ClubActivity activity = repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 활동을 찾을 수 없습니다. id=" + id));
+                .orElseThrow(() -> new ActivityNotFoundException(id));
 
         return toResponse(activity);
     }
@@ -57,7 +57,7 @@ public class ClubActivityService {
         validate(request);
 
         repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 활동을 찾을 수 없습니다. id=" + id));
+                .orElseThrow(() -> new ActivityNotFoundException(id));
 
         ClubActivity activity = new ClubActivity(
                 id,
@@ -78,7 +78,7 @@ public class ClubActivityService {
 
     public void delete(Long id) {
         repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 활동을 찾을 수 없습니다. id=" + id));
+                .orElseThrow(() -> new ActivityNotFoundException(id));
 
         repository.delete(id);
     }
