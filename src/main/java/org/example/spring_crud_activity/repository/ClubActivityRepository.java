@@ -5,7 +5,7 @@ import org.example.spring_crud_activity.domain.ClubActivity;
 import java.util.List;
 import java.util.Optional;
 
-public interface ClubActivityrepository {
+public interface ClubActivityRepository {
 
     ClubActivity save(ClubActivity activity);
 
